@@ -44,6 +44,7 @@ def scrape():
     tables = pd.read_html(url_facts)
     df = tables[0]
     df.columns = ['Facts', 'Values']
+    df.to_dict('records')
 
     #get the Featured image
     url_img = "https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars"
